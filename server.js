@@ -45,4 +45,5 @@ server = app.listen(port, () => {
     logger.info(`Node server is running on port ${port} at ${new Date()}`);
     logger.info('Starting pressure')
     promiseExecution();
+    process.exit();
 });
