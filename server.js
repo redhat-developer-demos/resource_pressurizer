@@ -48,3 +48,4 @@ server = app.listen(port, () => {
 });
 
 server.close();
+process.exit();
