@@ -4,6 +4,7 @@ const fs = require('fs');
 const pressurizeNetwork = async ()=> {
     const outputFilename = 'outputNetwork.txt'
     const milliSecs = 50;
+    var start = Date.now();
     async function callApi() {
         const url = `https://api.publicapis.org/entries`;
         const config = {
@@ -35,8 +36,11 @@ const pressurizeNetwork = async ()=> {
                 logger.error(e.message)
             })
     }
-
     for(;;){
+        var stop = Date.now();
+        if (stop-start > 300000){
+            break;
+        }
         await callApi();
     }
 }

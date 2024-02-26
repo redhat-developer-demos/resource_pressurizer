@@ -9,7 +9,12 @@ const outputFilename = 'outputCpu.txt'
 
 const pressurizeCpu = async ()=> {
     let i = 0;
+    var start = Date.now();
     for(;;){
+        var stop = Date.now();
+        if(stop-start > 300000){
+            break;
+        }
         if(isPrimeSync(i)){
             const msg = `${i} is prime`;
             logger.info(msg);
