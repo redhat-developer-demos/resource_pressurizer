@@ -1,5 +1,7 @@
 const {logger} = require("../logger");
 const fs = require('fs');
+const process = require('process');
+
 const isPrimeSync = (num) =>{
     for(let i = 2, s = Math.sqrt(num); i <= s; i++)
         if(num % i === 0) return false;
@@ -13,6 +15,7 @@ const pressurizeCpu = async ()=> {
     for(;;){
         var stop = Date.now();
         if(stop-start > 300000){
+            process.exit();
             break;
         }
         if(isPrimeSync(i)){
