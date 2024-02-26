@@ -40,7 +40,7 @@ const pressurizeNetwork = async ()=> {
                 logger.error(e.message)
             })
     }
-    for(let stop=Date.now();stop-start < 600000;stop = Date.now()){
+    for(let stop=Date.now();stop-start < 5000;stop = Date.now()){
         await callApi();
     }
 }
