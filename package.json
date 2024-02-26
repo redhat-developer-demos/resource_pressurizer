@@ -1,0 +1,30 @@
+{
+  "name": "resource_pressurizer",
+  "version": "1.0.0",
+  "description": "A project that has code that is intended the pressure CPU and Network IO on the machine on which it is running",
+  "main": "server.js",
+  "scripts": {
+    "test": "mocha",
+    "start": "node server"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/reselbob/resource_pressurizer.git"
+  },
+  "author": "Bob Reselman <reselbob@gmail.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/reselbob/resource_pressurizer/issues"
+  },
+  "homepage": "https://github.com/reselbob/resource_pressurizer#readme",
+  "dependencies": {
+    "axios": "^0.27.2",
+    "dotenv": "^16.0.2",
+    "express": "^4.18.1",
+    "winston": "^3.8.2"
+  },
+  "devDependencies": {
+    "chai": "^4.3.6",
+    "mocha": "^10.0.0"
+  }
+}
