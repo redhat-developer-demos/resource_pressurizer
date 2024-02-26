@@ -1,10 +1,13 @@
 const {logger} = require('../logger');
 const axios = require('axios');
 const fs = require('fs');
+
+const start = Date.now();
+
+
 const pressurizeNetwork = async ()=> {
     const outputFilename = 'outputNetwork.txt'
     const milliSecs = 50;
-    var start = Date.now();
     async function callApi() {
         const url = `https://api.publicapis.org/entries`;
         const config = {

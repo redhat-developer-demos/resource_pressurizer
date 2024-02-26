@@ -6,10 +6,10 @@ const isPrimeSync = (num) =>{
     return num > 1;
 }
 const outputFilename = 'outputCpu.txt'
+const start = Date.now();
 
 const pressurizeCpu = async ()=> {
     let i = 0;
-    var start = Date.now();
     for(;;){
         var stop = Date.now();
         if(stop-start > 300000){
