@@ -12,11 +12,7 @@ const start = Date.now();
 
 const pressurizeCpu = async ()=> {
     let i = 0;
-    for(;;){
-        var stop = Date.now();
-        if(stop-start > 600000){
-            break;
-        }
+    for(let stop=Date.now();stop-start < 10000;stop = Date.now()){
         if(isPrimeSync(i)){
             logger.info(`Elasped time: ${stop-start}`);
             const msg = `${i} is prime`;
@@ -27,7 +23,6 @@ const pressurizeCpu = async ()=> {
                 })
         }i++;
     }
-    process.exit();
 }
 
 module.exports = {pressureCpu: pressurizeCpu}
