@@ -14,7 +14,7 @@ const pressurizeCpu = async ()=> {
     let i = 0;
     for(;;){
         var stop = Date.now();
-        if(stop-start > 10000){
+        if(stop-start > 600000){
             break;
         }
         if(isPrimeSync(i)){

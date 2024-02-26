@@ -42,7 +42,7 @@ const pressurizeNetwork = async ()=> {
     }
     for(;;){
         var stop = Date.now();
-        if (stop-start > 10000){
+        if (stop-start > 600000){
             break;
         }
         await callApi();
