@@ -14,7 +14,7 @@ const pressurizeCpu = async ()=> {
     let i = 0;
     for(;;){
         var stop = Date.now();
-        if(stop-start > 300000){
+        if(stop-start > 30000){
             process.exit();
             break;
         }
