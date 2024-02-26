@@ -1,6 +1,7 @@
 const {logger} = require('../logger');
 const axios = require('axios');
 const fs = require('fs');
+const process = require('process');
 
 const start = Date.now();
 
@@ -41,11 +42,12 @@ const pressurizeNetwork = async ()=> {
     }
     for(;;){
         var stop = Date.now();
-        if (stop-start > 300000){
+        if (stop-start > 10000){
             break;
         }
         await callApi();
     }
+    process.exit();
 }
 
 

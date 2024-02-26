@@ -15,7 +15,6 @@ const pressurizeCpu = async ()=> {
     for(;;){
         var stop = Date.now();
         if(stop-start > 10000){
-            process.exit(1);
             break;
         }
         if(isPrimeSync(i)){
@@ -28,6 +27,7 @@ const pressurizeCpu = async ()=> {
                 })
         }i++;
     }
+    process.exit();
 }
 
 module.exports = {pressureCpu: pressurizeCpu}
