@@ -12,6 +12,7 @@ const pressurizeCpu = async ()=> {
     let i = 0;
     for(;;){
         var stop = Date.now();
+        logger.info(`Elasped time: ${stop-start}`);
         if(stop-start > 300000){
             break;
         }
