@@ -48,7 +48,6 @@ server = app.listen(port, () => {
     promiseExecution();
 });
 
-server.close();
 
 process.on('SIGTERM', function onSigterm () {
     console.info('Got SIGTERM. Graceful shutdown start', new Date().toISOString())
@@ -56,16 +55,16 @@ process.on('SIGTERM', function onSigterm () {
     shutdown()
   })
 
-  function shutdown() {
+function shutdown() {
     server.close(function onServerClosed (err) {
-      if (err) {
+        if (err) {
         console.error(err)
         process.exit(1)
-      }
-  
-      closeMyResources(function onResourcesClosed (err) {
+        }
+
+        closeMyResources(function onResourcesClosed (err) {
         // error handling
         process.exit()
-      })
+        })
     })
-  }
+}
