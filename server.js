@@ -49,3 +49,23 @@ server = app.listen(port, () => {
 });
 
 server.close();
+
+process.on('SIGTERM', function onSigterm () {
+    console.info('Got SIGTERM. Graceful shutdown start', new Date().toISOString())
+    // start graceul shutdown here
+    shutdown()
+  })
+
+  function shutdown() {
+    server.close(function onServerClosed (err) {
+      if (err) {
+        console.error(err)
+        process.exit(1)
+      }
+  
+      closeMyResources(function onResourcesClosed (err) {
+        // error handling
+        process.exit()
+      })
+    })
+  }
