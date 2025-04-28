@@ -1,0 +1,12 @@
+apiVersion: batch/v1
+kind: Job
+metadata:
+  name: rpjob
+spec:
+  template:
+    spec:
+      containers:
+      - name: resource-pressurizer
+        image: quay.io/rhdevelopers/resource-pressurizer:latest
+      restartPolicy: Never
+  backoffLimit: 4
