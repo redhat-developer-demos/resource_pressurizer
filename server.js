@@ -39,13 +39,14 @@ if(!omitNetwork)promises.push(pressureNetwork());
 let promiseExecution = async () => {
     logger.info('Adding promises')
     let promise = await Promise.all(promises);
-    promise.close();
+    //promise.close;
 };
 
 server = app.listen(port, () => {
     logger.info(`Node server is running on port ${port} at ${new Date()}`);
     logger.info('Starting pressure')
     promiseExecution();
+    server.close();
 });
 
 

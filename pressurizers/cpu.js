@@ -12,7 +12,7 @@ const start = Date.now();
 
 const pressurizeCpu = async ()=> {
     let i = 0;
-    for(let stop=Date.now();stop-start < 600000;stop = Date.now()){
+    for(let stop=Date.now();stop-start < 180000;stop = Date.now()){
         if(isPrimeSync(i)){
             logger.info(`Elasped time: ${stop-start}`);
             const msg = `${i} is prime`;
